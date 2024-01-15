@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet"     href="https://cdn.usebootstrap.com/bootstrap/4.1.1/css/bootstrap.min.css">                        
+  <link rel="stylesheet" type="text/css" href="nagasai.css">
+  <title>Responsive Navbar</title>
+</head>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    var facebookCountElement = document.getElementById('facebookCount');
+    var instagramCountElement = document.getElementById('instagramCount');
+    var twitterCountElement = document.getElementById('twitterCount');
+
+    var startFacebookCount = 0;
+    var startInstagramCount = 0;
+    var startTwitterCount = 0;
+
+    var endFacebookCount = 1000; // Replace with your actual Facebook count
+    var endInstagramCount = 500; // Replace with your actual Instagram count
+    var endTwitterCount = 200; // Replace with your actual Twitter count
+
+    var duration = 3000;
+    var interval = 20;
+
+    var incrementFacebook = (endFacebookCount - startFacebookCount) / (duration / interval);
+    var incrementInstagram = (endInstagramCount - startInstagramCount) / (duration / interval);
+    var incrementTwitter = (endTwitterCount - startTwitterCount) / (duration / interval);
+
+    function updateCounters() {
+      startFacebookCount += incrementFacebook;
+      startInstagramCount += incrementInstagram;
+      startTwitterCount += incrementTwitter;
+
+      facebookCountElement.innerText = Math.round(startFacebookCount);
+      instagramCountElement.innerText = Math.round(startInstagramCount);
+      twitterCountElement.innerText = Math.round(startTwitterCount);
+
+      if (
+        startFacebookCount >= endFacebookCount &&
+        startInstagramCount >= endInstagramCount &&
+        startTwitterCount >= endTwitterCount
+      ) {
+        clearInterval(intervalId);
+        facebookCountElement.innerText = endFacebookCount;
+        instagramCountElement.innerText = endInstagramCount;
+        twitterCountElement.innerText = endTwitterCount;
+      }
+    }
+
+    var intervalId = setInterval(updateCounters, interval);
+  });
+  
+    
+</script>
+<body>
+<div class="container-fluid header"> 
+  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a href="home.html">
+    <img src='Nagasai Logo.webp'
+        runat='server' alt='GnB-Logo' class="w-100">
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="font-weight: bold;">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-weight: bold;">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-weight: bold;">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-weight: bold;">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+</div>
+<div class="mt-5 container">
+   <h1 class="text-center" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> WELCOME TO NAGASAI INDUSTRIES</h1>
+   <p class="text-center mt-5">
+    We at Nagasai Industries, Design, Develop, Manufacture & Deliver solutions for all types of Press Tools, Jigs & Fixtures, and Engineering Components at one stop, as a fast-growing manufacturer in the field of Tooling & Engineering Products. Our In-house Design team with Manufacturing & Quality Jointly delivers the best suitable variant with respect to Quality, Cost & Lead Time
+   </p>
+</div>
+<div class="container-fluid mt-5">
+  <div id="video-container">
+      <video id="video" autoplay muted loop>
+          <source src="C:\Users\narah\OneDrive - EPITA\Desktop\NagaSaiIndustries\RearWheel.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</div>
+<div class="container-fluid mt-5">
+  <div id="twoSlidesCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-sm"> 
+            <div class="card">
+              <div class="card-body p-0 shadow-sm     rounded ">
+                <img src="offerings.png" runat="server" class="w-100 h-100 rounded" />
+                <h5 class="card-title text-center mt-3">Stamping and Press Dies</h5>
+                <!-- Content for the first div goes here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm"> <!-- Second Div -->
+            <div class="card">
+              <div class="card-body p-0 shadow-sm   rounded">
+                <img src="die casting.jpg" runat="server" class="w-100 h-100 rounded" />
+                <h5 class="card-title text-center mt-3">Die Casting Dies</h5>
+                <!-- Content for the second div goes here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm"> <!-- Third Div -->
+            <div class="card">
+              <div class="card-body p-0 shadow-sm  rounded">
+                <img src="IndustrialMachines.jpg" runat="server" class="w-100 h-100 rounded" />
+                <h5 class="card-title text-center mt-3">Industrial Machines</h5>
+                <!-- Content for the third div goes here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-sm"> <!-- Fourth Div -->
+            <div class="card">
+              <div class="card-body p-0 shadow-sm  rounded">
+                <img src="offerings.png" runat="server" class="w-100 h-100 rounded" />
+                <h5 class="card-title text-center mt-3">Stamping and Press Dies</h5>
+                <!-- Content for the fourth div goes here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm"> <!-- Fifth Div -->
+            <div class="card">
+              <div class="card-body p-0 shadow-sm  rounded ">
+                <img src="offerings.png" runat="server" class="w-100 h-100 rounded" />
+                <h5 class="card-title text-center mt-3">Die Casting Dies</h5>
+                <!-- Content for the fifth div goes here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm"> <!-- Sixth Div -->
+            <div class="card">
+              <div class="card-body p-0 shadow-sm  rounded">
+                <img src="offerings.png" runat="server" class="w-100 h-100 rounded" />
+                <h5 class="card-title text-center mt-3">Tooling Management and Services</h5>
+                <!-- Content for the sixth div goes here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#twoSlidesCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#twoSlidesCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<div class="viewer-container container mt-5">
+  <div class="row">
+  <div class="col-sm ">
+    <span id="facebookCount" class="count-up-container">0</span>
+  <p>Facebook Viewers</p>
+</div>
+<div class="col-sm">
+  <span id="instagramCount" class="count-up-container">0</span>
+  <p>Instagram Viewers</p>
+</div>
+<div class="col-sm">
+  <span id="twitterCount" class="count-up-container">0</span>
+  <p>Twitter Viewers</p>
+</div>
+</div>
+</div>
+ <div class="viewer-container container-fluid mt-5">
+      <h1 class="text-center mt-5" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">General Engineering</h1>
+      <p class="text-center mt-3">By combining design visualisation with strong scientific and technical expertise and bespoke equipment manufacturing at scale, G&B’s General Engineering businesses are key suppliers of tomorrow’s industrial machinery needs. With a strong focus on improving productivity and energy efficiency, we offer a range of engineering products and solutions with an unparalleled track record for making first-of-its-kind equipment that caters to diverse industrial needs. Our key businesses include:</p>
+      <img src="Generalegineering.jpg" alt="" runat="server" class="w-100">
+ </div>
+
+<footer class="bg-dark text-light mt-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>Contact Us</h5>
+        <p>Email: contact@example.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+      </div>
+      <div class="col-md-6">
+        <h5>Follow Us</h5>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Content goes here -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdn.usebootstrap.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
